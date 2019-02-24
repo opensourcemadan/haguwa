@@ -172,6 +172,7 @@ if ( ! function_exists( 'haguwa_setup' ) ) :
 
 		// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'haguwa_setup' );
@@ -220,14 +221,18 @@ function haguwa_scripts() {
 	wp_enqueue_style( 'haguwa-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 	// uses style-rtl.css if language with rtl is selected
 	wp_style_add_data( 'haguwa-style', 'rtl', 'replace' );
+	wp_enqueue_style('bootstrap', get_theme_file_uri( '/styles/bootstrap/bootstrap.css'), array(), '4.2.1');
 
 	// if ( has_nav_menu( 'menu-1' ) ) {
-	// 	wp_enqueue_script( 'haguwa-priority-menu', get_theme_file_uri( '/js/priority-menu.js' ), array(), '1.0', true );
+//	 	wp_enqueue_script( 'haguwa-priority-menu', get_theme_file_uri( '/js/priority-menu.js' ), array(), '1.0', true );
 	// 	wp_enqueue_script( 'haguwa-touch-navigation', get_theme_file_uri( '/js/touch-keyboard-navigation.js' ), array(), '1.0', true );
 	// }
 
-	wp_enqueue_style( 'haguwa-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
+	wp_enqueue_style( 'haguwa-print-style', get_theme_file_uri( '/styles/print.css'), array(), wp_get_theme()->get( 'Version' ), 'print' );
 
+//	wp_enqueue_script( 'jquery' );
+    wp_enqueue_script('bootstrap', get_theme_file_uri( '/scripts/bootstrap/bootstrap.js'), array('jquery'), '4.2.1', true );
+    wp_enqueue_script( 'haguwa-app-js', get_theme_file_uri( '/scripts/app.js'), array('jquery'), '1.0.0', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -305,7 +310,7 @@ add_action( 'wp_head', 'haguwa_colors_css_wrap' );
 /**
  * Enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_theme_file_path( '/inc/template-functions.php' );
 
 /**
  * SVG Icons related functions.
@@ -315,9 +320,9 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Custom template tags for the theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_theme_file_path( '/inc/template-tags.php' );
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_theme_file_path( '/inc/customizer.php' );

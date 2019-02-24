@@ -9,6 +9,8 @@
   "author": "Madan Karki",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
     "autoprefixer": "^9.4.4",
     "bootstrap": "^4.2.1",
     "browser-sync": "^2.26.3",
@@ -25,5 +27,11 @@
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
     "postcss-assets": "^5.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://opensourcemadan@bitbucket.org/opensourcemadan/abdrivingwp.git"
+  },
+  "keywords": [],
+  "homepage": "https://bitbucket.org/opensourcemadan/abdrivingwp#readme"
 }

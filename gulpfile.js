@@ -5,8 +5,8 @@ const
 
   // source and build folders
   dir = {
-    src         : '/wamp64/www/abdrivingWp/app/',
-    build       : '/wamp64/www/abdrivingWp/wp-content/themes/abdriving/'
+    src         : '/Users/srtsh19/sites/abdriving/app/',
+    build       : '/Users/srtsh19/sites/abdriving/wp-content/themes/abdriving/'
   },
 
   // Gulp and plugins
@@ -27,7 +27,7 @@ const
 // Browsersync options
 
 var syncOpts = {
-  proxy       : 'http://localhost/abdrivingWp/',
+  proxy       : 'http://localhost/abdriving/',
   port: 8001,
 };
 
@@ -85,9 +85,9 @@ var scss = {
   },
   processors: [
     require('postcss-assets')({
-      loadPaths: ['/wamp64/www/abdrivingWp/app/images/'],
+      loadPaths: ['/Users/srtsh19/sites/abdriving/app/images/'],
       basePath: dir.build,
-      baseUrl: '/wamp64/www/abdrivingWp/wp-content/themes/abdriving/'
+      baseUrl: '/Users/srtsh19/sites/abdriving/wp-content/themes/abdriving/'
     }),
     require('autoprefixer')({
       browsers: ['last 2 versions', '> 2%']
@@ -110,17 +110,17 @@ function css() {
 
 // JavaScript settings
 const js = {
-  src         : dir.src + 'js/**/*',
-  build       : dir.build + 'js/',
-  filename    : 'scripts.js'
+  src         : dir.src + 'scripts/**/*',
+  build       : dir.build + 'scripts/',
+  // filename    : 'app.js'
 };
 
 // JavaScript processing
 function javaScript() {
   return gulp.src(js.src)
-    .pipe(deporder())
-    .pipe(concat(js.filename))
-    .pipe(stripdebug())
+    // .pipe(deporder())
+    // .pipe(concat(js.filename))
+    // .pipe(stripdebug())
     .pipe(uglify())
     .pipe(gulp.dest(js.build))
     .pipe(browsersync.stream());

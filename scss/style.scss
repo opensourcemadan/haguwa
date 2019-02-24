@@ -11,7 +11,7 @@ html {
 	font-size: 16px;
 }
 body {
-	color: #000;
+	color: #00f;
 	/*background-image: inline('images/banner.jpg');*/
 }
 * {
@@ -59,4 +59,9 @@ body {
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
   outline: 0;
+}
+.hb-0 {
+  background: url("images/banner.jpg") center center no-repeat;
+  background-size: cover;
+  min-height: 455px;
 }

@@ -13,8 +13,9 @@
  * @subpackage haguwa
  * @since 1.0
  */
+/* check if theme directory is directly accessed, then exit the execution */
+function_exists('get_header') ? get_header() : exit;
 
-get_header();
 ?>
 
 	<section id="primary" class="content-area">
