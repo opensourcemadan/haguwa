@@ -1,3 +1,5 @@
+/*customize variables*/
+@import "app-variables.scss";
 /* required bootstrap files */
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
@@ -11,3 +13,5 @@
 @import "../../../node_modules/bootstrap/scss/card";
 @import "../../../node_modules/bootstrap/scss/images";
 @import "../../../node_modules/bootstrap/scss/code";
+
+@import "styles.scss";

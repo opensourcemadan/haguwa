@@ -218,10 +218,10 @@ add_action( 'after_setup_theme', 'haguwa_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function haguwa_scripts() {
+	wp_enqueue_style('bootstrap', get_theme_file_uri( '/styles/bootstrap/bootstrap.css'), array(), '4.2.1');
 	wp_enqueue_style( 'haguwa-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 	// uses style-rtl.css if language with rtl is selected
 	wp_style_add_data( 'haguwa-style', 'rtl', 'replace' );
-	wp_enqueue_style('bootstrap', get_theme_file_uri( '/styles/bootstrap/bootstrap.css'), array(), '4.2.1');
 
 	// if ( has_nav_menu( 'menu-1' ) ) {
 //	 	wp_enqueue_script( 'haguwa-priority-menu', get_theme_file_uri( '/js/priority-menu.js' ), array(), '1.0', true );
